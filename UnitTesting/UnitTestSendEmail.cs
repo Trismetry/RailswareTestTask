@@ -6,6 +6,7 @@ using RailswareTestTask;
 using RailswareTestTask.Controllers;
 using RailswareTestTask.Interfaces;
 using System;
+using System.Threading.Tasks;
 
 namespace UnitTesting
 {
@@ -27,20 +28,20 @@ namespace UnitTesting
         }
 
         [Test]
-        public void TestEmailSendCorrect()
+        public async Task TestEmailSendCorrect()
         {
             var testData = new MailData();
             testData.SenderNameAndEmail = "T abc@demomailtrap.com";
             testData.RecipientNameAndEmail = "Illya trismetry@gmail.com";
             testData.Subject = "Test 22";
             testData.Body = "T";
-            _mockMailService.Setup(s => s.SendMail(testData)).Returns(true);     
-            bool res = _mailController.SendMail(testData);
+            _mockMailService.Setup(s => s.SendMail(testData)).ReturnsAsync(true);     
+            bool res = await _mailController.SendMail(testData);
             Assert.IsTrue(res);
         }
 
         [Test]
-        public void TestEmailSendIncorrect()
+        public async Task TestEmailSendIncorrect()
         {
             //does'nt work with incorrect domain (gmail.com) in this case
 
@@ -49,8 +50,8 @@ namespace UnitTesting
             testData.RecipientNameAndEmail = "Illya trismetry@gmail.com";
             testData.Subject = "Test 22";
             testData.Body = "T";
-            _mockMailService.Setup(s => s.SendMail(testData)).Returns(false);
-            bool res = _mailController.SendMail(testData);
+            _mockMailService.Setup(s => s.SendMail(testData)).ReturnsAsync(false);
+            bool res = await _mailController.SendMail(testData);
             Assert.IsFalse(res);
         }
     }

@@ -19,7 +19,7 @@ namespace RailswareTestTask
             _mailSettings = mailSettingsOptions.Value;
         }
 
-        public bool SendMail(MailData mailData)
+        public async Task<bool> SendMail(MailData mailData)
         {
             try
             {
@@ -70,10 +70,10 @@ namespace RailswareTestTask
 
                     using (SmtpClient mailClient = new SmtpClient())
                     {
-                        mailClient.Connect(_mailSettings.Server, _mailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
-                        mailClient.Authenticate(_mailSettings.UserName, _mailSettings.Password);
-                        mailClient.Send(emailMessage);
-                        mailClient.Disconnect(true);
+                        await mailClient.ConnectAsync(_mailSettings.Server, _mailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
+                        await mailClient.AuthenticateAsync(_mailSettings.UserName, _mailSettings.Password);
+                        await mailClient.SendAsync(emailMessage);
+                        await mailClient.DisconnectAsync(true);
                     }
                 }
 

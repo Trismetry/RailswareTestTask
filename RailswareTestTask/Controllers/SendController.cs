@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RailswareTestTask.Interfaces;
+using System.Threading.Tasks;
 
 namespace RailswareTestTask.Controllers
 {
@@ -16,9 +17,9 @@ namespace RailswareTestTask.Controllers
 
         [HttpPost]
         [Route("SendMail")]
-        public bool SendMail([FromForm] MailData mailData)
+        public async Task<bool> SendMail([FromForm] MailData mailData)
         {
-            return _mailService.SendMail(mailData);
+            return await _mailService.SendMail(mailData);
         }
     }
 }
