@@ -19,7 +19,7 @@ namespace RailswareTestTask
             _mailSettings = mailSettingsOptions.Value;
         }
 
-        public async Task<bool> SendMail(MailData mailData)
+        public async Task<bool> SendMailAsync(MailData mailData)
         {
             try
             {

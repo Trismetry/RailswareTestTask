@@ -7,6 +7,6 @@ namespace RailswareTestTask.Interfaces
 {
     public interface IMailService
     {
-        Task<bool> SendMail(MailData mailData);
+        Task<bool> SendMailAsync(MailData mailData);
     }
 }

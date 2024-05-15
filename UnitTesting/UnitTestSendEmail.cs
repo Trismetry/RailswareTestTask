@@ -35,7 +35,7 @@ namespace UnitTesting
             testData.RecipientNameAndEmail = "Illya trismetry@gmail.com";
             testData.Subject = "Test 22";
             testData.Body = "T";
-            _mockMailService.Setup(s => s.SendMail(testData)).ReturnsAsync(true);     
+            _mockMailService.Setup(s => s.SendMailAsync(testData)).ReturnsAsync(true);     
             bool res = await _mailController.SendMail(testData);
             Assert.IsTrue(res);
         }
@@ -50,7 +50,7 @@ namespace UnitTesting
             testData.RecipientNameAndEmail = "Illya trismetry@gmail.com";
             testData.Subject = "Test 22";
             testData.Body = "T";
-            _mockMailService.Setup(s => s.SendMail(testData)).ReturnsAsync(false);
+            _mockMailService.Setup(s => s.SendMailAsync(testData)).ReturnsAsync(false);
             bool res = await _mailController.SendMail(testData);
             Assert.IsFalse(res);
         }

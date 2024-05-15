@@ -9,7 +9,6 @@ namespace RailswareTestTask.Controllers
     public class MailController : ControllerBase
     {
         private readonly IMailService _mailService;
-        //injecting the IMailService into the constructor
         public MailController(IMailService _MailService)
         {
             _mailService = _MailService;
@@ -19,7 +18,7 @@ namespace RailswareTestTask.Controllers
         [Route("SendMail")]
         public async Task<bool> SendMail([FromForm] MailData mailData)
         {
-            return await _mailService.SendMail(mailData);
+            return await _mailService.SendMailAsync(mailData);
         }
     }
 }
