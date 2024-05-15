@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34031.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RailswareTestTask", "RailswareTestTask\RailswareTestTask.csproj", "{108686BD-59A4-4388-8765-C7F25101B000}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "UnitTesting\UnitTesting.csproj", "{EAD74C52-88A7-4053-8BDA-7DFDA15E16F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{108686BD-59A4-4388-8765-C7F25101B000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{108686BD-59A4-4388-8765-C7F25101B000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{108686BD-59A4-4388-8765-C7F25101B000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{108686BD-59A4-4388-8765-C7F25101B000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD74C52-88A7-4053-8BDA-7DFDA15E16F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD74C52-88A7-4053-8BDA-7DFDA15E16F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD74C52-88A7-4053-8BDA-7DFDA15E16F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD74C52-88A7-4053-8BDA-7DFDA15E16F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8769C63-2C40-4495-8E74-0534564A6FF8}
+	EndGlobalSection
+EndGlobal
